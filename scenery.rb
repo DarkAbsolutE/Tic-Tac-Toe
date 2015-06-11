@@ -6,9 +6,17 @@ class Scenery
 		@size = map
 	end
 
-	def score(player_x, player_o)
-		@score_x = player_x
-		@score_o = player_o
+	def save_score(player_x, player_o)
+		@score_x = player_x unless player_x == nil
+		@score_o = player_o unless player_o == nil
+	end
+
+	def score_player_x
+		@score_x
+	end
+
+	def score_player_o
+		@score_o
 	end
 
 	def player_initialize?
