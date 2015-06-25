@@ -1,5 +1,5 @@
 class Game
-	
+
 	attr_reader :verification, :scenery, :player_ini
 
 	def start(type)
@@ -26,7 +26,12 @@ class Game
 		@scenery.save_continue(false)
 	end
 
-	def play
+	def play(move)
 		@verification = Verification.new
+		if @verification.next(move) == "true_win"
+			"Win"
+		elsif @verification.next(move) == "full"
+			"Lose"
+		end
 	end
 end
